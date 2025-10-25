@@ -19,4 +19,13 @@
     rgb(143, 236, 202, 0.29) 55%,
     rgb(74, 247, 255, 0.08) 100%
   );
+  
+  /* Beautiful gradient definitions for titles */
+  --title-gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --title-gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --title-gradient-tertiary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --title-gradient-quaternary: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  --title-gradient-quinary: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --title-gradient-senary: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  --title-gradient-rainbow: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
 }

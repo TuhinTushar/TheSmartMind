@@ -355,3 +355,151 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
     border: 1px dashed var(--tertiary);
   }
 }
+
+/* Beautiful gradient titles for posts, categories, and topics */
+.topic-list-item .main-link .title,
+.topic-list .topic-list-data .main-link .title,
+.topic-list .topic-list-data .main-link .title a {
+  background: var(--title-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.topic-list-item .main-link .title:hover,
+.topic-list .topic-list-data .main-link .title:hover,
+.topic-list .topic-list-data .main-link .title a:hover {
+  background: var(--title-gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: scale(1.02);
+}
+
+/* Category titles and names */
+.category-box .category-box-inner .category-details h3,
+.category-box .category-box-inner .category-details .category-name,
+.category-list-item .category-name,
+.category-list-item .category-name a {
+  background: var(--title-gradient-tertiary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+}
+
+.category-box .category-box-inner .category-details h3:hover,
+.category-box .category-box-inner .category-details .category-name:hover,
+.category-list-item .category-name:hover,
+.category-list-item .category-name a:hover {
+  background: var(--title-gradient-quaternary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: scale(1.05);
+}
+
+/* Individual topic titles */
+.topic-title,
+.topic-title h1,
+.topic-title h1 a,
+.topic-map .topic-title,
+.topic-map .topic-title a {
+  background: var(--title-gradient-rainbow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 1.4em;
+  transition: all 0.3s ease;
+}
+
+.topic-title:hover,
+.topic-title h1:hover,
+.topic-title h1 a:hover,
+.topic-map .topic-title:hover,
+.topic-map .topic-title a:hover {
+  background: var(--title-gradient-quinary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: scale(1.02);
+}
+
+/* Category badges and tags */
+.category-badge,
+.category-badge a,
+.topic-category,
+.topic-category a {
+  background: var(--title-gradient-senary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.category-badge:hover,
+.category-badge a:hover,
+.topic-category:hover,
+.topic-category a:hover {
+  background: var(--title-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: scale(1.1);
+}
+
+/* Navigation titles */
+.navigation-categories .search-banner h1,
+.navigation-categories .search-banner .headline {
+  background: var(--title-gradient-rainbow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  font-size: 2em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header titles */
+.d-header .title,
+.d-header .title a {
+  background: var(--title-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* Fallback for browsers that don't support background-clip: text */
+@supports not (-webkit-background-clip: text) {
+  .topic-list-item .main-link .title,
+  .topic-list .topic-list-data .main-link .title,
+  .topic-list .topic-list-data .main-link .title a,
+  .category-box .category-box-inner .category-details h3,
+  .category-box .category-box-inner .category-details .category-name,
+  .category-list-item .category-name,
+  .category-list-item .category-name a,
+  .topic-title,
+  .topic-title h1,
+  .topic-title h1 a,
+  .topic-map .topic-title,
+  .topic-map .topic-title a,
+  .category-badge,
+  .category-badge a,
+  .topic-category,
+  .topic-category a,
+  .navigation-categories .search-banner h1,
+  .navigation-categories .search-banner .headline,
+  .d-header .title,
+  .d-header .title a {
+    color: var(--tertiary);
+    background: none;
+    -webkit-text-fill-color: initial;
+  }
+}
