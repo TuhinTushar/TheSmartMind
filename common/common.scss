@@ -6,11 +6,14 @@
 .topic-list .topic-item .main-link:not(.category-item .main-link),
 .extra-info-wrapper .topic-link:not(.category-link),
 .post-controls .topic-link:not(.category-link),
-// Explicitly target post titles on homepage and topic pages
-body.navigation-topics .topic-list .topic-item .main-link,
-body.navigation-topics .latest-topic-list-item .main-link,
+// Target topic links in lists on homepage and topic pages
+.latest-topic-list-item .main-link,
 .topic-row .main-link,
-.latest-topic-list-item .main-link {
+.raw-topic-link,
+.extra-info-wrapper a.raw-topic-link,
+.search-result .search-result-topic .topic-status .main-link,
+.topic-list .link-bottom-line .main-link,
+.extra-info .main-link {
   background: linear-gradient(
     90deg,
     #ff006e 0%,
@@ -36,11 +39,14 @@ body.navigation-topics .latest-topic-list-item .main-link,
 .topic-list .topic-item .main-link:hover:not(.category-item .main-link),
 .extra-info-wrapper .topic-link:hover:not(.category-link),
 .post-controls .topic-link:hover:not(.category-link),
-// Explicitly target post titles on homepage and topic pages
-body.navigation-topics .topic-list .topic-item .main-link:hover,
-body.navigation-topics .latest-topic-list-item .main-link:hover,
+// Target topic links in lists on homepage and topic pages
+.latest-topic-list-item .main-link:hover,
 .topic-row .main-link:hover,
-.latest-topic-list-item .main-link:hover {
+.raw-topic-link:hover,
+.extra-info-wrapper a.raw-topic-link:hover,
+.search-result .search-result-topic .topic-status .main-link:hover,
+.topic-list .link-bottom-line .main-link:hover,
+.extra-info .main-link:hover {
   background: linear-gradient(
     90deg,
     #06ffa5 0%,
@@ -100,9 +106,32 @@ body.navigation-topics .latest-topic-list-item .main-link:hover,
   transform: translateX(5px);
 }
 
-.topic-list .topic-item .main-link {
+.topic-list .topic-item .main-link,
+.latest-topic-list-item .main-link,
+.topic-row .main-link {
   display: inline-block;
   animation: gradient-shift 3s ease infinite, pulse 2s ease-in-out infinite;
+}
+
+// Apply gradient to main links in topic lists (exclude categories and tags)
+.topic-list-item:not([class*="category"]):not([class*="tag"]) .main-link,
+.topic-list .topic-item:not([class*="category"]):not([class*="tag"]) .main-link,
+.latest-topic-list-item:not([class*="category"]):not([class*="tag"]) .main-link,
+.topic-row:not([class*="category"]):not([class*="tag"]) .main-link {
+  background: linear-gradient(
+    90deg,
+    #ff006e 0%,
+    #8338ec 25%,
+    #3a86ff 50%,
+    #06ffa5 75%,
+    #ffbe0b 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease infinite;
+  font-weight: 600;
 }
 
 // Subtle pulse effect
@@ -115,24 +144,19 @@ body.navigation-topics .latest-topic-list-item .main-link:hover,
   }
 }
 
-// Make main category titles bold on homepage
-body.navigation-categories .category-title,
-body.navigation-topics .category-title,
-.category-box .category-title,
-.category-box-inner .category-title,
-.category .title:not(.category-box .subtitle),
-.desktop-view .category-list .category .title:not(.category-box .subtitle) {
-  font-weight: 700 !important;
-}
-
-// Explicit override to ensure categories and tags remain uncolored (but not the gradient styles above)
+// Explicit override to ensure categories and tags remain uncolored and not bold
 .category-breadcrumb,
+.category-item,
 .category-link,
 .category-name,
 .badge-category,
 .category-badge-link,
 .category-header,
+.category-title,
 .title .main-link:has(.category-badge),
+.navigation-categories .fancy-title,
+.navigation-categories .topic-title,
+.navigation-categories .main-link,
 // Exclude topic titles that are inside category pages (subcategories)
 body.category .topic-list .topic-item .main-link,
 body.subcategory .topic-list .topic-item .main-link,
