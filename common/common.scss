@@ -432,7 +432,10 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
   font-size: 1.3em;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   animation: gradient-shift 4s ease-in-out infinite;
-  text-shadow: 0 0 10px rgba(255, 154, 139, 0.3);
+  text-shadow: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .category-box .category-box-inner .category-details h3:hover,
@@ -446,7 +449,7 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
   background-clip: text;
   transform: scale(1.08) rotate(-1deg);
   animation: rainbow-flow 2s ease-in-out infinite, bounce-in 0.8s ease-out;
-  text-shadow: 0 0 20px rgba(168, 237, 234, 0.6);
+  text-shadow: none;
 }
 
 /* Individual topic titles */
@@ -596,6 +599,57 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
   transform: scale(1.02);
   animation: rainbow-flow 2s ease-in-out infinite;
   text-shadow: 0 0 20px rgba(168, 237, 234, 0.7);
+}
+
+/* Mobile optimizations for crisp text rendering */
+@media (max-width: 768px) {
+  .category-box .category-box-inner .category-details h3,
+  .category-box .category-box-inner .category-details .category-name,
+  .category-list-item .category-name,
+  .category-list-item .category-name a {
+    text-shadow: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-weight: 700;
+  }
+  
+  .topic-list-item .main-link .title,
+  .topic-list .topic-list-data .main-link .title,
+  .topic-list .topic-list-data .main-link .title a {
+    text-shadow: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  .topic-title,
+  .topic-title h1,
+  .topic-title h1 a,
+  .topic-map .topic-title,
+  .topic-map .topic-title a,
+  .fancy-title,
+  .fancy-title h1,
+  .fancy-title h1 a,
+  .topic-body .fancy-title,
+  .topic-body .fancy-title h1,
+  .topic-body .fancy-title h1 a,
+  .topic-body .topic-title,
+  .topic-body .topic-title h1,
+  .topic-body .topic-title h1 a,
+  .topic-body h1,
+  .topic-body h1 a,
+  .post-title,
+  .post-title h1,
+  .post-title h1 a,
+  .topic-post .post-title,
+  .topic-post .post-title h1,
+  .topic-post .post-title h1 a {
+    text-shadow: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
 }
 
 /* Fallback for browsers that don't support background-clip: text */
