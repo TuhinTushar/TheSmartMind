@@ -356,26 +356,66 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
   }
 }
 
-/* Beautiful gradient titles for posts, categories, and topics */
+/* Animated keyframes for gradient effects */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes rainbow-flow {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 0% 50%; }
+  75% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    filter: brightness(1) drop-shadow(0 0 5px rgba(255, 0, 110, 0.3));
+  }
+  50% { 
+    filter: brightness(1.2) drop-shadow(0 0 15px rgba(255, 0, 110, 0.6));
+  }
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.8) rotate(-2deg); opacity: 0.7; }
+  50% { transform: scale(1.05) rotate(1deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* Beautiful animated gradient titles for posts, categories, and topics */
 .topic-list-item .main-link .title,
 .topic-list .topic-list-data .main-link .title,
 .topic-list .topic-list-data .main-link .title a {
-  background: var(--title-gradient-primary);
+  background: var(--title-gradient-neon);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: gradient-shift 3s ease-in-out infinite, pulse-glow 2s ease-in-out infinite;
+  position: relative;
 }
 
 .topic-list-item .main-link .title:hover,
 .topic-list .topic-list-data .main-link .title:hover,
 .topic-list .topic-list-data .main-link .title a:hover {
-  background: var(--title-gradient-secondary);
+  background: var(--title-gradient-galaxy);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  transform: scale(1.02);
+  transform: scale(1.05) rotate(1deg);
+  animation: rainbow-flow 1.5s ease-in-out infinite, bounce-in 0.6s ease-out;
 }
 
 /* Category titles and names */
@@ -383,24 +423,30 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
 .category-box .category-box-inner .category-details .category-name,
 .category-list-item .category-name,
 .category-list-item .category-name a {
-  background: var(--title-gradient-tertiary);
+  background: var(--title-gradient-candy);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight: 700;
-  font-size: 1.2em;
-  transition: all 0.3s ease;
+  font-weight: 800;
+  font-size: 1.3em;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: gradient-shift 4s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(255, 154, 139, 0.3);
 }
 
 .category-box .category-box-inner .category-details h3:hover,
 .category-box .category-box-inner .category-details .category-name:hover,
 .category-list-item .category-name:hover,
 .category-list-item .category-name a:hover {
-  background: var(--title-gradient-quaternary);
+  background: var(--title-gradient-aurora);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  transform: scale(1.05);
+  transform: scale(1.08) rotate(-1deg);
+  animation: rainbow-flow 2s ease-in-out infinite, bounce-in 0.8s ease-out;
+  text-shadow: 0 0 20px rgba(168, 237, 234, 0.6);
 }
 
 /* Individual topic titles */
@@ -409,13 +455,16 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
 .topic-title h1 a,
 .topic-map .topic-title,
 .topic-map .topic-title a {
-  background: var(--title-gradient-rainbow);
+  background: var(--title-gradient-rainbow-extended);
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight: 700;
-  font-size: 1.4em;
-  transition: all 0.3s ease;
+  font-weight: 800;
+  font-size: 1.6em;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: rainbow-flow 5s ease-in-out infinite, pulse-glow 3s ease-in-out infinite;
+  text-shadow: 0 0 15px rgba(255, 0, 110, 0.4);
 }
 
 .topic-title:hover,
@@ -423,11 +472,14 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
 .topic-title h1 a:hover,
 .topic-map .topic-title:hover,
 .topic-map .topic-title a:hover {
-  background: var(--title-gradient-quinary);
+  background: var(--title-gradient-galaxy);
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  transform: scale(1.02);
+  transform: scale(1.03) rotate(0.5deg);
+  animation: gradient-shift 1s ease-in-out infinite, bounce-in 0.7s ease-out;
+  text-shadow: 0 0 25px rgba(102, 126, 234, 0.7);
 }
 
 /* Category badges and tags */
@@ -435,45 +487,82 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
 .category-badge a,
 .topic-category,
 .topic-category a {
-  background: var(--title-gradient-senary);
+  background: var(--title-gradient-fire);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: gradient-shift 3.5s ease-in-out infinite;
+  text-shadow: 0 0 8px rgba(255, 65, 108, 0.3);
 }
 
 .category-badge:hover,
 .category-badge a:hover,
 .topic-category:hover,
 .topic-category a:hover {
-  background: var(--title-gradient-primary);
+  background: var(--title-gradient-ocean);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  transform: scale(1.1);
+  transform: scale(1.15) rotate(2deg);
+  animation: rainbow-flow 1.8s ease-in-out infinite, bounce-in 0.6s ease-out;
+  text-shadow: 0 0 18px rgba(102, 125, 182, 0.6);
 }
 
 /* Navigation titles */
 .navigation-categories .search-banner h1,
 .navigation-categories .search-banner .headline {
-  background: var(--title-gradient-rainbow);
+  background: var(--title-gradient-rainbow-extended);
+  background-size: 400% 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight: 800;
-  font-size: 2em;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 900;
+  font-size: 2.5em;
+  text-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
+  animation: rainbow-flow 6s ease-in-out infinite, pulse-glow 4s ease-in-out infinite;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navigation-categories .search-banner h1:hover,
+.navigation-categories .search-banner .headline:hover {
+  background: var(--title-gradient-galaxy);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: scale(1.05) rotate(1deg);
+  animation: gradient-shift 1.2s ease-in-out infinite, bounce-in 0.8s ease-out;
+  text-shadow: 0 0 30px rgba(102, 126, 234, 0.8);
 }
 
 /* Header titles */
 .d-header .title,
 .d-header .title a {
-  background: var(--title-gradient-primary);
+  background: var(--title-gradient-neon);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight: 700;
+  font-weight: 800;
+  animation: gradient-shift 4s ease-in-out infinite;
+  text-shadow: 0 0 12px rgba(255, 0, 110, 0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.d-header .title:hover,
+.d-header .title a:hover {
+  background: var(--title-gradient-aurora);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: scale(1.02);
+  animation: rainbow-flow 2s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(168, 237, 234, 0.7);
 }
 
 /* Fallback for browsers that don't support background-clip: text */
