@@ -472,16 +472,15 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
 .topic-post .post-title,
 .topic-post .post-title h1,
 .topic-post .post-title h1 a {
-  background: var(--title-gradient-rainbow-extended) !important;
-  background-size: 300% 300% !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  font-weight: 800 !important;
-  font-size: 1.6em !important;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  animation: rainbow-flow 5s ease-in-out infinite, pulse-glow 3s ease-in-out infinite !important;
-  text-shadow: 0 0 15px rgba(255, 0, 110, 0.4) !important;
+  background: var(--title-gradient-rainbow-extended);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: rainbow-flow 5s ease-in-out infinite, pulse-glow 3s ease-in-out infinite;
+  text-shadow: 0 0 15px rgba(255, 0, 110, 0.4);
 }
 
 .topic-title:hover,
@@ -506,14 +505,14 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
 .topic-post .post-title:hover,
 .topic-post .post-title h1:hover,
 .topic-post .post-title h1 a:hover {
-  background: var(--title-gradient-galaxy) !important;
-  background-size: 300% 300% !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  transform: scale(1.03) rotate(0.5deg) !important;
-  animation: gradient-shift 1s ease-in-out infinite, bounce-in 0.7s ease-out !important;
-  text-shadow: 0 0 25px rgba(102, 126, 234, 0.7) !important;
+  background: var(--title-gradient-galaxy);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: scale(1.03) rotate(0.5deg);
+  animation: gradient-shift 1s ease-in-out infinite, bounce-in 0.7s ease-out;
+  text-shadow: 0 0 25px rgba(102, 126, 234, 0.7);
 }
 
 /* Category badges and tags */
@@ -638,8 +637,8 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
   .navigation-categories .search-banner .headline,
   .d-header .title,
   .d-header .title a {
-    color: var(--tertiary) !important;
-    background: none !important;
-    -webkit-text-fill-color: initial !important;
+    color: var(--tertiary);
+    background: none;
+    -webkit-text-fill-color: initial;
   }
 }
