@@ -1,11 +1,11 @@
-// Animated colorful gradient for post titles
-.topic-title,
-.fancy-title,
-.topic-list-item .main-link,
-.title-wrapper .fancy-title,
-.topic-list .topic-item .main-link,
-.extra-info-wrapper .topic-link,
-.post-controls .topic-link {
+// Animated colorful gradient for post titles (excluding categories)
+.topic-title:not(.category-breadcrumb .topic-title),
+.fancy-title:not(.category-breadcrumb .fancy-title),
+.topic-list-item .main-link:not(.category-link),
+.title-wrapper .fancy-title:not(.category-link),
+.topic-list .topic-item .main-link:not(.category-item .main-link),
+.extra-info-wrapper .topic-link:not(.category-link),
+.post-controls .topic-link:not(.category-link) {
   background: linear-gradient(
     90deg,
     #ff006e 0%,
@@ -23,14 +23,14 @@
   transition: all 0.3s ease;
 }
 
-// Alternate gradient for hover
-.topic-title:hover,
-.fancy-title:hover,
-.topic-list-item .main-link:hover,
-.title-wrapper .fancy-title:hover,
-.topic-list .topic-item .main-link:hover,
-.extra-info-wrapper .topic-link:hover,
-.post-controls .topic-link:hover {
+// Alternate gradient for hover (excluding categories)
+.topic-title:hover:not(.category-breadcrumb .topic-title),
+.fancy-title:hover:not(.category-breadcrumb .fancy-title),
+.topic-list-item .main-link:hover:not(.category-link),
+.title-wrapper .fancy-title:hover:not(.category-link),
+.topic-list .topic-item .main-link:hover:not(.category-item .main-link),
+.extra-info-wrapper .topic-link:hover:not(.category-link),
+.post-controls .topic-link:hover:not(.category-link) {
   background: linear-gradient(
     90deg,
     #06ffa5 0%,
@@ -60,12 +60,12 @@
   }
 }
 
-// Additional animated rainbow effect for visited links
-.topic-title:visited,
-.fancy-title:visited,
-.topic-list-item .main-link:visited,
-.title-wrapper .fancy-title:visited,
-.topic-list .topic-item .main-link:visited {
+// Additional animated rainbow effect for visited links (excluding categories)
+.topic-title:visited:not(.category-breadcrumb .topic-title),
+.fancy-title:visited:not(.category-breadcrumb .fancy-title),
+.topic-list-item .main-link:visited:not(.category-link),
+.title-wrapper .fancy-title:visited:not(.category-link),
+.topic-list .topic-item .main-link:visited:not(.category-item .main-link) {
   background: linear-gradient(
     90deg,
     #c77dff 0%,
@@ -103,4 +103,17 @@
   50% {
     opacity: 0.85;
   }
+}
+
+// Explicit override to ensure categories remain uncolored
+.category-breadcrumb,
+.category-item,
+.category-link,
+.category-name,
+.badge-category,
+.category-badge-link {
+  -webkit-text-fill-color: var(--primary) !important;
+  color: var(--primary) !important;
+  background: none !important;
+  animation: none !important;
 }
