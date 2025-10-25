@@ -418,21 +418,21 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
   animation: rainbow-flow 1.5s ease-in-out infinite, bounce-in 0.6s ease-out;
 }
 
-/* Category titles and names */
+/* Category titles and names - Main categories only */
 .category-box .category-box-inner .category-details h3,
 .category-box .category-box-inner .category-details .category-name,
 .category-list-item .category-name,
 .category-list-item .category-name a {
-  background: var(--title-gradient-candy);
-  background-size: 200% 200%;
+  background: var(--title-gradient-rainbow-extended);
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 800;
   font-size: 1.3em;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: gradient-shift 4s ease-in-out infinite;
-  text-shadow: 0 0 10px rgba(255, 154, 139, 0.3);
+  animation: rainbow-flow 5s ease-in-out infinite;
+  text-shadow: 0 0 15px rgba(255, 0, 110, 0.4);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -442,14 +442,38 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
 .category-box .category-box-inner .category-details .category-name:hover,
 .category-list-item .category-name:hover,
 .category-list-item .category-name a:hover {
-  background: var(--title-gradient-aurora);
-  background-size: 200% 200%;
+  background: var(--title-gradient-galaxy);
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   transform: scale(1.08) rotate(-1deg);
-  animation: rainbow-flow 2s ease-in-out infinite, bounce-in 0.8s ease-out;
-  text-shadow: 0 0 20px rgba(168, 237, 234, 0.6);
+  animation: gradient-shift 1.5s ease-in-out infinite, bounce-in 0.8s ease-out;
+  text-shadow: 0 0 25px rgba(102, 126, 234, 0.7);
+}
+
+/* Sub-categories should NOT be colored - override any gradient styling */
+.category-box .category-box-inner .category-details .subcategories,
+.category-box .category-box-inner .category-details .subcategories a,
+.category-box .category-box-inner .category-details .subcategory,
+.category-box .category-box-inner .category-details .subcategory a,
+.category-list-item .subcategories,
+.category-list-item .subcategories a,
+.category-list-item .subcategory,
+.category-list-item .subcategory a,
+.category-list .subcategories,
+.category-list .subcategories a,
+.category-list .subcategory,
+.category-list .subcategory a {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
+  color: var(--primary-medium) !important;
+  text-shadow: none !important;
+  animation: none !important;
+  transform: none !important;
+  font-weight: 500 !important;
 }
 
 /* Individual topic titles */
@@ -617,6 +641,30 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
     text-rendering: optimizeLegibility;
     font-weight: 700;
     font-size: 1.1em;
+  }
+  
+  /* Ensure sub-categories remain uncolored on mobile */
+  .category-box .category-box-inner .category-details .subcategories,
+  .category-box .category-box-inner .category-details .subcategories a,
+  .category-box .category-box-inner .category-details .subcategory,
+  .category-box .category-box-inner .category-details .subcategory a,
+  .category-list-item .subcategories,
+  .category-list-item .subcategories a,
+  .category-list-item .subcategory,
+  .category-list-item .subcategory a,
+  .category-list .subcategories,
+  .category-list .subcategories a,
+  .category-list .subcategory,
+  .category-list .subcategory a {
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    background-clip: initial !important;
+    color: var(--primary-medium) !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transform: none !important;
+    font-weight: 500 !important;
   }
   
   .topic-list-item .main-link .title,
