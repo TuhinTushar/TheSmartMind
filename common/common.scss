@@ -117,7 +117,12 @@
 .title .main-link:has(.category-badge),
 .navigation-categories .fancy-title,
 .navigation-categories .topic-title,
-.navigation-categories .main-link {
+.navigation-categories .main-link,
+// Exclude topic titles that are inside category pages (subcategories)
+body.category .topic-list .topic-item .main-link,
+body.subcategory .topic-list .topic-item .main-link,
+body.categories-category .topic-list .topic-item .main-link,
+body.categories-subcategory .topic-list .topic-item .main-link {
   -webkit-text-fill-color: var(--primary) !important;
   color: var(--primary) !important;
   background: none !important;
