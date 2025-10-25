@@ -432,7 +432,7 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
   font-size: 1.3em;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   animation: gradient-shift 4s ease-in-out infinite;
-  text-shadow: none;
+  text-shadow: 0 0 10px rgba(255, 154, 139, 0.3);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -449,7 +449,7 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
   background-clip: text;
   transform: scale(1.08) rotate(-1deg);
   animation: rainbow-flow 2s ease-in-out infinite, bounce-in 0.8s ease-out;
-  text-shadow: none;
+  text-shadow: 0 0 20px rgba(168, 237, 234, 0.6);
 }
 
 /* Individual topic titles */
@@ -612,6 +612,7 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     font-weight: 700;
+    font-size: 1.1em;
   }
   
   .topic-list-item .main-link .title,
@@ -621,6 +622,7 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    font-weight: 600;
   }
   
   .topic-title,
@@ -645,6 +647,34 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
   .topic-post .post-title,
   .topic-post .post-title h1,
   .topic-post .post-title h1 a {
+    text-shadow: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-weight: 700;
+  }
+  
+  .category-badge,
+  .category-badge a,
+  .topic-category,
+  .topic-category a {
+    text-shadow: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  .navigation-categories .search-banner h1,
+  .navigation-categories .search-banner .headline {
+    text-shadow: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-size: 2em;
+  }
+  
+  .d-header .title,
+  .d-header .title a {
     text-shadow: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
