@@ -1,11 +1,15 @@
 // Animated colorful gradient for post titles (excluding categories)
 .topic-title:not(.category-breadcrumb .topic-title),
 .fancy-title:not(.category-breadcrumb .fancy-title),
-.topic-list-item .main-link,
+.topic-list-item .main-link:not(.category-link),
 .title-wrapper .fancy-title:not(.category-link),
-.topic-list .topic-item .main-link,
-.extra-info-wrapper .topic-link,
-.post-controls .topic-link {
+.topic-list .topic-item .main-link:not(.category-item .main-link):not(.category-link),
+.extra-info-wrapper .topic-link:not(.category-link),
+.post-controls .topic-link:not(.category-link),
+// Ensure post titles show gradient on homepage
+.latest-topic-list-item .main-link,
+.topic-list tr.topic-list-item .main-link,
+body.navigation-topics .topic-list-item .main-link {
   background: linear-gradient(
     90deg,
     #ff006e 0%,
@@ -26,11 +30,15 @@
 // Alternate gradient for hover (excluding categories)
 .topic-title:hover:not(.category-breadcrumb .topic-title),
 .fancy-title:hover:not(.category-breadcrumb .fancy-title),
-.topic-list-item .main-link:hover,
+.topic-list-item .main-link:hover:not(.category-link),
 .title-wrapper .fancy-title:hover:not(.category-link),
-.topic-list .topic-item .main-link:hover,
-.extra-info-wrapper .topic-link:hover,
-.post-controls .topic-link:hover {
+.topic-list .topic-item .main-link:hover:not(.category-item .main-link):not(.category-link),
+.extra-info-wrapper .topic-link:hover:not(.category-link),
+.post-controls .topic-link:hover:not(.category-link),
+// Ensure hover gradient works on homepage
+.latest-topic-list-item .main-link:hover,
+.topic-list tr.topic-list-item .main-link:hover,
+body.navigation-topics .topic-list-item .main-link:hover {
   background: linear-gradient(
     90deg,
     #06ffa5 0%,
@@ -63,9 +71,13 @@
 // Additional animated rainbow effect for visited links (excluding categories)
 .topic-title:visited:not(.category-breadcrumb .topic-title),
 .fancy-title:visited:not(.category-breadcrumb .fancy-title),
-.topic-list-item .main-link:visited,
+.topic-list-item .main-link:visited:not(.category-link),
 .title-wrapper .fancy-title:visited:not(.category-link),
-.topic-list .topic-item .main-link:visited {
+.topic-list .topic-item .main-link:visited:not(.category-item .main-link):not(.category-link),
+// Ensure visited state works on homepage
+.latest-topic-list-item .main-link:visited,
+.topic-list tr.topic-list-item .main-link:visited,
+body.navigation-topics .topic-list-item .main-link:visited {
   background: linear-gradient(
     90deg,
     #c77dff 0%,
@@ -105,17 +117,27 @@
   }
 }
 
-// Explicit override to ensure categories and tags remain uncolored and not bold
+// Make main/parent category titles bold on homepage
+.category-box .category-title,
+.category-box-inner .category-title,
+.desktop-view .category-list .category .title,
+.category .title,
+body.navigation-categories .category-title,
+body.navigation-topics .category-title,
+.category-header-main .category-title {
+  font-weight: bold !important;
+}
+
+// Explicit override to ensure subcategories and tags remain uncolored and not bold
 .category-breadcrumb,
+.category-item,
 .category-link,
 .category-name,
 .badge-category,
 .category-badge-link,
 .category-header,
 .title .main-link:has(.category-badge),
-.navigation-categories .fancy-title,
-.navigation-categories .topic-title,
-.navigation-categories .main-link,
+// Don't override topic titles that should have gradient
 // Exclude topic titles that are inside category pages (subcategories)
 body.category .topic-list .topic-item .main-link,
 body.subcategory .topic-list .topic-item .main-link,
@@ -135,14 +157,4 @@ a[href*="/tags/"]:not(.hashtag-cooked) {
   background: none !important;
   animation: none !important;
   font-weight: normal !important;
-}
-
-// Make main categories bold on homepage
-body.navigation-categories .category-title,
-body.navigation-topics .category-title,
-.category-box .category-title,
-.category-box-inner .category-title,
-.desktop-view .category-list .category .title,
-.category .title {
-  font-weight: bold !important;
 }
