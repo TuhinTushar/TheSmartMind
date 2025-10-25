@@ -107,13 +107,11 @@
 
 // Explicit override to ensure categories and tags remain uncolored and not bold
 .category-breadcrumb,
-.category-item,
 .category-link,
 .category-name,
 .badge-category,
 .category-badge-link,
 .category-header,
-.category-title,
 .title .main-link:has(.category-badge),
 .navigation-categories .fancy-title,
 .navigation-categories .topic-title,
@@ -137,4 +135,14 @@ a[href*="/tags/"]:not(.hashtag-cooked) {
   background: none !important;
   animation: none !important;
   font-weight: normal !important;
+}
+
+// Make main categories bold on homepage
+body.navigation-categories .category-title,
+body.navigation-topics .category-title,
+.category-box .category-title,
+.category-box-inner .category-title,
+.desktop-view .category-list .category .title,
+.category .title {
+  font-weight: bold !important;
 }
