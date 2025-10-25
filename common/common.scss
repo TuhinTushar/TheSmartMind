@@ -522,7 +522,9 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
 .category-badge,
 .category-badge a,
 .topic-category,
-.topic-category a {
+.topic-category a,
+.badge-category__name,
+.badge-category__name a {
   background: var(--title-gradient-fire);
   background-size: 200% 200%;
   -webkit-background-clip: text;
@@ -537,7 +539,9 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
 .category-badge:hover,
 .category-badge a:hover,
 .topic-category:hover,
-.topic-category a:hover {
+.topic-category a:hover,
+.badge-category__name:hover,
+.badge-category__name a:hover {
   background: var(--title-gradient-ocean);
   background-size: 200% 200%;
   -webkit-background-clip: text;
@@ -657,7 +661,9 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
   .category-badge,
   .category-badge a,
   .topic-category,
-  .topic-category a {
+  .topic-category a,
+  .badge-category__name,
+  .badge-category__name a {
     text-shadow: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -717,6 +723,8 @@ summary.select-kit-header.single-select-header.dropdown-select-box-header {
   .category-badge a,
   .topic-category,
   .topic-category a,
+  .badge-category__name,
+  .badge-category__name a,
   .navigation-categories .search-banner h1,
   .navigation-categories .search-banner .headline,
   .d-header .title,
