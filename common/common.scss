@@ -1,0 +1,106 @@
+// Animated colorful gradient for post titles
+.topic-title,
+.fancy-title,
+.topic-list-item .main-link,
+.title-wrapper .fancy-title,
+.topic-list .topic-item .main-link,
+.extra-info-wrapper .topic-link,
+.post-controls .topic-link {
+  background: linear-gradient(
+    90deg,
+    #ff006e 0%,
+    #8338ec 25%,
+    #3a86ff 50%,
+    #06ffa5 75%,
+    #ffbe0b 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease infinite;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+// Alternate gradient for hover
+.topic-title:hover,
+.fancy-title:hover,
+.topic-list-item .main-link:hover,
+.title-wrapper .fancy-title:hover,
+.topic-list .topic-item .main-link:hover,
+.extra-info-wrapper .topic-link:hover,
+.post-controls .topic-link:hover {
+  background: linear-gradient(
+    90deg,
+    #06ffa5 0%,
+    #ff006e 25%,
+    #ffbe0b 50%,
+    #8338ec 75%,
+    #3a86ff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: scale(1.02);
+  filter: brightness(1.2);
+}
+
+// Keyframe animation for gradient movement
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+// Additional animated rainbow effect for visited links
+.topic-title:visited,
+.fancy-title:visited,
+.topic-list-item .main-link:visited,
+.title-wrapper .fancy-title:visited,
+.topic-list .topic-item .main-link:visited {
+  background: linear-gradient(
+    90deg,
+    #c77dff 0%,
+    #7b2cbf 25%,
+    #560bad 50%,
+    #240046 75%,
+    #c77dff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 4s ease infinite reverse;
+}
+
+// Enhanced animation for topic lists
+.topic-list .topic-item {
+  transition: transform 0.2s ease;
+}
+
+.topic-list .topic-item:hover {
+  transform: translateX(5px);
+}
+
+.topic-list .topic-item .main-link {
+  display: inline-block;
+  animation: gradient-shift 3s ease infinite, pulse 2s ease-in-out infinite;
+}
+
+// Subtle pulse effect
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
