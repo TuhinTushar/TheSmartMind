@@ -1,7 +1,5 @@
 {
-  "name": "TheSmartMind",
-  "component": true,
-  "author": "Tuhin",
+  "name": "Mint Theme",
   "about_url": "https://meta.discourse.org/t/mint-a-modern-theme-for-discourse/202822",
   "license_url": "https://github.com/discourse/discourse-mint-theme/blob/main/LICENSE",
   "color_schemes": {
