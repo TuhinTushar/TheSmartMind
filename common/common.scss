@@ -105,15 +105,22 @@
   }
 }
 
-// Explicit override to ensure categories remain uncolored
+// Explicit override to ensure categories remain uncolored and not bold
 .category-breadcrumb,
 .category-item,
 .category-link,
 .category-name,
 .badge-category,
-.category-badge-link {
+.category-badge-link,
+.category-header,
+.category-title,
+.title .main-link:has(.category-badge),
+.navigation-categories .fancy-title,
+.navigation-categories .topic-title,
+.navigation-categories .main-link {
   -webkit-text-fill-color: var(--primary) !important;
   color: var(--primary) !important;
   background: none !important;
   animation: none !important;
+  font-weight: normal !important;
 }
