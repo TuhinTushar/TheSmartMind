@@ -105,7 +105,7 @@
   }
 }
 
-// Explicit override to ensure categories remain uncolored and not bold
+// Explicit override to ensure categories and tags remain uncolored and not bold
 .category-breadcrumb,
 .category-item,
 .category-link,
@@ -122,7 +122,16 @@
 body.category .topic-list .topic-item .main-link,
 body.subcategory .topic-list .topic-item .main-link,
 body.categories-category .topic-list .topic-item .main-link,
-body.categories-subcategory .topic-list .topic-item .main-link {
+body.categories-subcategory .topic-list .topic-item .main-link,
+// Exclude tags from gradient styling
+body.tags .topic-list .topic-item .main-link,
+body.tags-all .topic-list .topic-item .main-link,
+body.tag .topic-list .topic-item .main-link,
+.tag,
+.tag-name,
+.badge .tag-name,
+.discourse-tag,
+a[href*="/tags/"]:not(.hashtag-cooked) {
   -webkit-text-fill-color: var(--primary) !important;
   color: var(--primary) !important;
   background: none !important;
